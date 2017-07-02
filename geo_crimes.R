@@ -90,8 +90,8 @@ ukraine <- data.frame(
 
 
 png(filename = "crimes.png",
-    width = 1200,
-    height = 950)
+    width = 1100,
+    height = 900)
 
 ggplot(data = reg, mapping = aes(x = year)) +
   geom_line(data = avg,
@@ -120,8 +120,8 @@ ggplot(data = reg, mapping = aes(x = year)) +
       size = 30
     ),
     axis.title = element_blank(),
-    axis.text = element_text(size = rel(0.45)),
-    strip.text.x = element_text(size = rel(0.6)),
+    axis.text = element_text(size = rel(0.4)),
+    strip.text.x = element_text(size = rel(0.55)),
     panel.spacing.x = unit(1.25, 'lines'),
     panel.spacing.y = unit(1.50, 'lines'),
     legend.position = "none",
@@ -139,7 +139,7 @@ ggplot(data = reg, mapping = aes(x = year)) +
       margin = margin(b = 30)
     ),
     plot.caption = element_text(
-      size = rel(0.65),
+      size = rel(0.6),
       margin = margin(b = 10, t = 50),
       hjust = 0.5,
       color = '#5D646F'
