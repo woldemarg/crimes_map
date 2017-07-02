@@ -11,8 +11,7 @@
 ### Рівень злочинності:
 ![Рівень злочинності в Україні в 1995-2016рр.](https://raw.githubusercontent.com/woldemarg/crimes_map/master/crimes.png "Рівень злочинності в Україні в 1995-2016рр.")
 
-### Реалізація і вихідні дані:
-### Реалізація і вихідні дані:
+### Реалізація і вхідні дані:
 - бібліотека ```geofacet``` - опис [тут](https://hafen.github.io/geofacet/)
 - [geo designer](https://hafen.github.io/grid-designer/) - для побудови власних гео-сіток
 - альтернативний варіант гео-сітки для України - [тут](https://github.com/andriy-gazin/population-trends)
