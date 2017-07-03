@@ -91,25 +91,27 @@ ukraine <- data.frame(
 
 png(filename = "crimes.png",
     width = 1100,
-    height = 900)
+    height = 950)
 
 ggplot(data = reg, mapping = aes(x = year)) +
   geom_line(data = avg,
-            mapping = aes(y = index_avg),
-            color = "#7F8590") +
-  geom_line(mapping = aes(y = index_reg),
-            size = 1,
-            color = "#a50f15") +
+            mapping = aes(y = index_avg, color = "avg")) +
+  geom_line(mapping = aes(y = index_reg, color = "reg"),
+            size = 1) +
   geom_area(mapping = aes(y = index_reg, fill = index_last),
             alpha = 0.3) +
   facet_geo( ~ name, grid = ukraine) +
-  scale_fill_gradient(low = "#fee5d9", high = "#a50f15") +
+  scale_fill_gradient(low = "#fee5d9", high = "#a50f15", guide = FALSE) +
   scale_x_continuous(breaks = seq(1995, 2016, 7),
                      labels = c("'95", "'02", "'09", "'16")) +
-  scale_color_manual(values = c("#7F8590", "#a50f15"),
-                     labels = c("Україна", "регіон ")) +
+  #настройка легенды
+  #https://stackoverflow.com/questions/18394391/r-custom-legend-for-multiple-layer-ggplot  #
+  scale_color_manual(
+    values = c("avg" = "#7F8590", "reg" = "#a50f15"),
+    labels = c("по Україні ", "по області")
+  ) +
   labs(title = "Рівень злочинності в Україні в 1995-2016 роках",
-       subtitle = "кількість правопорушень на 10 000 осіб по регіонам і середня по Україні",
+       subtitle = "кількість правопорушень на 10 000 осіб",
        caption = "За даними територіальних органів Держстату | Візуалізація: Голомб Володимир") +
   theme_minimal(base_family = "PT Sans") +
   theme(
@@ -124,7 +126,9 @@ ggplot(data = reg, mapping = aes(x = year)) +
     strip.text.x = element_text(size = rel(0.55)),
     panel.spacing.x = unit(1.25, 'lines'),
     panel.spacing.y = unit(1.50, 'lines'),
-    legend.position = "none",
+    legend.position = "top",
+    legend.text = element_text(size = rel(0.6)),
+    legend.title = element_blank(),
     panel.grid.major = element_line(
       size = 0.3,
       linetype = "dotted",
