@@ -15,4 +15,4 @@
 - бібліотека ```geofacet``` - опис [тут](https://hafen.github.io/geofacet/)
 - [geo designer](https://hafen.github.io/grid-designer/) - для побудови власних гео-сіток
 - альтернативний варіант гео-сітки для України - [тут](https://github.com/andriy-gazin/population-trends)
-- [перелік](http://www.ukrstat.gov.ua/work/region.html) територіальних органів Держстату 
+- [перелік](http://www.ukrstat.gov.ua/work/region.html) територіальних органів Держстату лист-відповідь по АРК і Севастополю

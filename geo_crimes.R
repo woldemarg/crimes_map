@@ -5,6 +5,7 @@ library(geofacet)
 library(extrafont)
 library(tidyverse)
 
+
 #данные по регионам
 reg <- read_xlsx("crimes.xlsx", sheet = 1, trim_ws = TRUE)
 
@@ -91,7 +92,7 @@ ukraine <- data.frame(
 
 png(filename = "crimes.png",
     width = 1100,
-    height = 950)
+    height = 920)
 
 ggplot(data = reg, mapping = aes(x = year)) +
   geom_line(data = avg,
